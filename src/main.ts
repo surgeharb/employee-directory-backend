@@ -12,6 +12,7 @@ import * as compression from 'compression';
 import * as morgan from 'morgan';
 import * as helmet from 'helmet';
 import * as Ddos from 'ddos';
+import * as cors from 'cors';
 import { noop } from 'rxjs';
 
 async function bootstrap() {
@@ -29,6 +30,8 @@ async function bootstrap() {
   app.use(helmet.hidePoweredBy({ setTo: 'PHP/5.3.2' }));
   app.use(helmet.frameguard({ action: 'deny' }));
   app.use(helmet.noSniff());
+
+  app.use('/', cors());
 
   // APPLICATION LAYER DDOS PROTECTION
   const ddos = new Ddos({ burst: 10, limit: 15 });
