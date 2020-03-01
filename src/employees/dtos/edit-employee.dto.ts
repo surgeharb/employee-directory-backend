@@ -1,10 +1,11 @@
-import { Field, ObjectType, Int } from 'type-graphql';
-import { IsNotEmpty } from 'class-validator';
+import { ArgsType, Field, Int } from "type-graphql";
+import { IsNotEmpty } from "class-validator";
 
-@ObjectType()
-export class Employee {
+@ArgsType()
+export class EditEmployeeDto {
   @Field()
-  _id?: string;
+  @IsNotEmpty()
+  _id: string;
 
   @Field()
   @IsNotEmpty()

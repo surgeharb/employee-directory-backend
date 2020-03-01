@@ -1,11 +1,15 @@
-import { InputType, Field, Int } from "type-graphql";
+import { ArgsType, Field, Int } from "type-graphql";
 import { IsNotEmpty } from "class-validator";
 
-@InputType()
+@ArgsType()
 export class AddEmployeeDto {
   @Field()
   @IsNotEmpty()
-  name: string;
+  firstName: string;
+
+  @Field()
+  @IsNotEmpty()
+  lastName: string;
 
   @Field()
   @IsNotEmpty()
@@ -19,14 +23,11 @@ export class AddEmployeeDto {
   department?: string;
 
   @Field({ nullable: true })
-  profilePicture?: string;
+  profilePicture?: number;
 
   @Field(type => Int, { nullable: true })
   workYears?: number;
 
   @Field(type => Int, { nullable: true })
-  birthdate?: number;
-
-  @Field(type => Int, { nullable: true })
-  idNumber?: number;
+  phoneNumber?: number;
 }

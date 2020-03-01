@@ -2,14 +2,14 @@ import { Schema } from 'mongoose';
 
 export const EmployeesSchema = new Schema({
 
-  name: { type: String },
+  firstName: { type: String },
+  lastName: { type: String },
   position: { type: String },
   department: { type: String },
   nationality: { type: String },
-  profilePicture: { type: String },
+  profilePicture: { type: Number },
   workYears: { type: Number },
-  birthdate: { type: Number },
-  idNumber: { type: Number },
+  phoneNumber: { type: Number },
 
   // Timestamps
   updatedAt: { type: Date, select: false },

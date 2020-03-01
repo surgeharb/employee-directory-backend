@@ -13,6 +13,14 @@ export class EmployeesService {
     @InjectModel(EMPLOYEES.name) private readonly employeesModel: Model<IEmployee>,
   ) { }
 
+  public countAll() {
+    return this.employeesModel.countDocuments().exec();
+  }
+
+  public findAll(page = 0, pageSize = 0): Promise<IEmployee[]> {
+    return this.employeesModel.find().skip(pageSize * page).limit(pageSize).lean().exec();
+  }
+
   public create(employee: Employee): Promise<IEmployee> {
     return this.employeesModel.create(employee);
   }
