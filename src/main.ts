@@ -42,7 +42,7 @@ async function bootstrap() {
   app.use('/index.html', (request: any, response: any) => response.send(K));
 
   // MORGAN LOGGER
-  app.use(morgan('dev'));
+  // app.use(morgan('dev'));
 
   await app.listen(process.env.PORT);
 }
