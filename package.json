@@ -23,7 +23,7 @@
     "restart": "git stash && git pull && npm i --production && npm run prestart:prod && pm2 restart directory"
   },
   "dependencies": {
-    "@nestjs/common": "^6.8.0",
+    "@nestjs/common": "^10.4.16",
     "@nestjs/core": "^6.8.0",
     "@nestjs/graphql": "^6.6.1",
     "@nestjs/jwt": "^6.1.1",
