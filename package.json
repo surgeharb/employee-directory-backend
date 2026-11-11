@@ -43,7 +43,7 @@
     "graphql": "^14.6.0",
     "graphql-tools": "^4.0.7",
     "helmet": "^3.21.1",
-    "mongoose": "^5.7.5",
+    "mongoose": "^6.13.12",
     "morgan": "^1.9.1",
     "nest-schedule": "^0.6.3",
     "passport": "^0.4.0",
